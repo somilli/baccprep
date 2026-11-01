@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="BaccPrep — Réussis ton BAC. Diagnostic gratuit, programme complet, plan personnel. Bientôt disponible au Mali, au Sénégal, en Guinée, au Burkina Faso, en Côte d'Ivoire, en Mauritanie et au Niger.">
+<meta name="theme-color" content="#0A2540">
+<title>BaccPrep — Réussis ton BAC</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='none' stroke='%230A2540' stroke-width='4'/%3E%3Ccircle cx='24' cy='24' r='6' fill='%23F5B301'/%3E%3Cpath d='M24 3v12M24 33v12M3 24h12M33 24h12M9 9l8.5 8.5M30.5 30.5L39 39M39 9l-8.5 8.5M17.5 30.5L9 39' stroke='%230A2540' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { background:#fff; color:#0A2540; font-family: Helvetica, Arial, sans-serif; line-height:1.5; }
+.wrap { max-width:880px; margin:0 auto; padding:40px 24px 64px; }
+header { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.brand { display:flex; align-items:center; gap:12px; font-size:30px; font-weight:800; letter-spacing:-1px; color:#0A2540; }
+.pill { border:1.5px solid #D9D9D2; border-radius:999px; padding:8px 16px; font-size:13px; letter-spacing:2px; font-weight:700; color:#0A2540; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+.dot { width:9px; height:9px; border-radius:50%; background:#F5B301; display:inline-block; }
+main { margin-top:72px; }
+h1 { font-size:64px; line-height:1.02; font-weight:800; letter-spacing:-2px; color:#0F0F0F; }
+.sub { font-size:26px; line-height:1.35; color:#4A4A44; margin-top:20px; max-width:640px; }
+.lead { font-size:19px; line-height:1.6; color:#33332E; margin-top:28px; max-width:640px; }
+.card { background:#F1F1ED; border-radius:24px; padding:36px 32px; margin-top:44px; }
+.card-top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.card-label { font-size:13px; letter-spacing:2px; font-weight:700; color:#6B6B64; }
+.gold-pill { background:#F5B301; color:#0A2540; border-radius:999px; padding:7px 14px; font-size:13px; letter-spacing:1px; font-weight:800; white-space:nowrap; }
+.price { display:flex; align-items:baseline; gap:14px; margin-top:22px; flex-wrap:wrap; }
+.big { font-size:88px; font-weight:800; letter-spacing:-3px; line-height:1; color:#0F0F0F; }
+.big-sub { font-size:24px; font-weight:700; color:#33332E; }
+.then { font-size:24px; font-weight:800; color:#0A2540; margin-top:6px; }
+.vs { font-size:17px; color:#6B6B64; margin-top:12px; }
+.vs s { color:#9A9A92; }
+.vs b { color:#0A2540; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.chip { background:#fff; border:1px solid #CFCFC6; border-radius:999px; padding:8px 14px; font-size:14px; font-weight:700; letter-spacing:1px; color:#0A2540; }
+.features { list-style:none; margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; }
+.features li { font-size:17px; color:#33332E; padding-left:26px; position:relative; }
+.features li::before { content:"✓"; position:absolute; left:0; color:#0A2540; font-weight:800; }
+.bar { height:10px; background:#F5B301; border-radius:999px; margin-top:26px; }
+section.waitlist { margin-top:48px; }
+section.waitlist h2 { font-size:32px; font-weight:800; letter-spacing:-1px; color:#0F0F0F; }
+section.waitlist p { font-size:18px; color:#4A4A44; margin-top:10px; max-width:600px; }
+form { margin-top:24px; display:flex; flex-direction:column; gap:12px; max-width:560px; }
+label { font-size:14px; font-weight:700; letter-spacing:1px; color:#0A2540; }
+input, select { width:100%; border:1.5px solid #CFCFC6; border-radius:14px; padding:16px 18px; font-size:18px; font-family:inherit; color:#0A2540; background:#fff; }
+input:focus, select:focus { outline:2px solid #F5B301; border-color:#0A2540; }
+button { background:#0A2540; color:#fff; border:none; border-radius:999px; padding:18px 24px; font-size:18px; letter-spacing:1.5px; font-weight:800; font-family:inherit; cursor:pointer; margin-top:6px; }
+button:hover { background:#123252; }
+.error { color:#B3261E; font-size:16px; display:none; }
+.success { display:none; background:#F1F1ED; border-radius:24px; padding:32px; margin-top:24px; max-width:560px; }
+.success h3 { font-size:26px; font-weight:800; color:#0A2540; }
+.success p { font-size:18px; color:#4A4A44; margin-top:8px; }
+.countries { margin-top:48px; font-size:16px; line-height:1.7; color:#7A7A72; text-align:center; }
+footer { margin-top:32px; padding-top:24px; border-top:1px solid #E6E6E0; font-size:15px; line-height:1.7; color:#7A7A72; text-align:center; }
+@media (max-width:640px) {
+  .wrap { padding:28px 20px 48px; }
+  main { margin-top:48px; }
+  h1 { font-size:46px; letter-spacing:-1.5px; }
+  .sub { font-size:21px; }
+  .lead { font-size:17px; }
+  .card { padding:28px 22px; }
+  .big { font-size:72px; }
+  .then { font-size:21px; }
+  .features { grid-template-columns:1fr; }
+  section.waitlist h2 { font-size:26px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="none" stroke="#0A2540" stroke-width="4"/><circle cx="24" cy="24" r="6" fill="#F5B301"/><path d="M24 3v12M24 33v12M3 24h12M33 24h12M9 9l8.5 8.5M30.5 30.5L39 39M39 9l-8.5 8.5M17.5 30.5L9 39" stroke="#0A2540" stroke-width="3" stroke-linecap="round"/></svg>
+      BaccPrep
+    </div>
+    <div class="pill"><span class="dot"></span>BIENTÔT DISPONIBLE</div>
+  </header>
+
+  <main>
+    <h1>Réussis ton BAC.</h1>
+    <p class="sub">Sache où tu en es. Avant le BAC.</p>
+    <p class="lead">Un diagnostic gratuit pour savoir exactement où tu en es, puis un programme complet qui suit tes points faibles — avec un plan rien que pour toi.</p>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-label">PROGRAMME &middot; TOUTES LES MATIÈRES</div>
+        <div class="gold-pill">DIAGNOSTIC GRATUIT</div>
+      </div>
+      <div class="price"><span class="big">0&nbsp;$</span><span class="big-sub">diagnostic</span></div>
+      <div class="then">puis 300&nbsp;$ — ou 3&nbsp;×&nbsp;100&nbsp;$</div>
+      <div class="vs"><s>cours particuliers à l&rsquo;heure</s> &nbsp;&rarr;&nbsp; <b>un prix fixe</b></div>
+      <div class="chips">
+        <span class="chip">MATHS</span>
+        <span class="chip">PHYSIQUE</span>
+        <span class="chip">CHIMIE</span>
+        <span class="chip">HISTOIRE</span>
+        <span class="chip">GÉOGRAPHIE</span>
+        <span class="chip">ANGLAIS</span>
+      </div>
+      <ul class="features">
+        <li>Suivi en direct de ta progression</li>
+        <li>Une note chaque semaine</li>
+        <li>Tableau de bord pour les parents</li>
+        <li>Plan personnel, rien que pour toi</li>
+        <li>Fonctionne hors ligne</li>
+        <li>Diagnostic avant tout paiement</li>
+      </ul>
+      <div class="bar"></div>
+    </div>
+
+    <section class="waitlist" id="liste">
+      <h2>Sois prévenu au lancement.</h2>
+      <p>Laisse ton email et ton pays. On t&rsquo;écrit quand BaccPrep ouvre dans ton pays.</p>
+      <form id="waitlist-form" novalidate>
+        <div>
+          <label for="email">TON EMAIL</label>
+          <input type="email" id="email" name="email" placeholder="ton@email.com" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="pays">TON PAYS</label>
+          <select id="pays" name="pays" required>
+            <option value="" selected>Choisis ton pays</option>
+            <option value="Mali">Mali</option>
+            <option value="Sénégal">Sénégal</option>
+            <option value="Guinée">Guinée</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Côte d'Ivoire">Côte d&rsquo;Ivoire</option>
+            <option value="Mauritanie">Mauritanie</option>
+            <option value="Niger">Niger</option>
+            <option value="Diaspora">Diaspora (hors des 7 pays)</option>
+          </select>
+        </div>
+        <p class="error" id="form-error">Vérifie ton email et choisis ton pays.</p>
+        <button type="submit">REJOINDRE LA LISTE D&rsquo;ATTENTE &rarr;</button>
+      </form>
+      <div class="success" id="form-success" role="status">
+        <h3>Merci — on te prévient au lancement.</h3>
+        <p id="success-detail">Ton email est bien enregistré. Tu seras parmi les premiers prévenus.</p>
+      </div>
+    </section>
+
+    <p class="countries">Mali &middot; Sénégal &middot; Guinée &middot; Burkina Faso &middot; Côte d&rsquo;Ivoire &middot; Mauritanie &middot; Niger</p>
+  </main>
+
+  <footer>
+    BaccPrep &middot; baccprep.online<br>
+    Aucune garantie de réussite. Juste un plan qui te suit.
+  </footer>
+</div>
+<script>
+(function () {
+  var form = document.getElementById('waitlist-form');
+  var success = document.getElementById('form-success');
+  var error = document.getElementById('form-error');
+  var detail = document.getElementById('success-detail');
+  var saved = null;
+  try { saved = JSON.parse(localStorage.getItem('baccprep-waitlist') || 'null'); } catch (e) { saved = null; }
+  if (saved && saved.email) {
+    form.style.display = 'none';
+    success.style.display = 'block';
+    detail.textContent = 'Ton email ' + saved.email + ' est bien enregistré. Tu seras parmi les premiers prévenus.';
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var pays = document.getElementById('pays').value;
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && pays !== '';
+    if (!ok) { error.style.display = 'block'; return; }
+    error.style.display = 'none';
+    try { localStorage.setItem('baccprep-waitlist', JSON.stringify({ email: email, pays: pays, date: new Date().toISOString() })); } catch (err) {}
+    form.style.display = 'none';
+    success.style.display = 'block';
+    detail.textContent = 'Ton email ' + email + ' est bien enregistré. Tu seras parmi les premiers prévenus.';
+  });
+})();
+</script>
+</body>
+</html>
